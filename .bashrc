@@ -98,6 +98,8 @@ unset dir
 file="/usr/share/libdncommon-bash/liball"
 [ -f "${file}" ] && export DN_BASH_FNS="${file}"
 unset file
+# - GITURL (personal github account url stem)                          {{{2
+export GITURL="https://github.com/dnebauer"
 # - GOPATH                                                             {{{2
 dir="/usr/local/lib/go"
 [ -d "${dir}" ] && export GOPATH="${dir}"
