@@ -1,4 +1,3 @@
-vcsh-bash
-=========
+# dotfiles-bash
 
-Personal bash configuration in a vcsh repository.
+Personal bash configuration.
