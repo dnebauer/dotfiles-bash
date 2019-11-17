@@ -67,7 +67,7 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-	PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
+	PS1="\\[\\e]0;${debian_chroot:+($debian_chroot)}\\u@\\h: \\w\\a\\]$PS1"
 	;;
 *)
 	;;
@@ -187,8 +187,19 @@ fi
 
 # Apparix (to, bm, portal)                                             {{{1
 if [ -f "${HOME}/.apparixfunctions" ] ; then
+    # shellcheck source=/home/david/.apparixfunctions
     . "${HOME}/.apparixfunctions"
 fi
+
+# fzf                                                                  {{{1
+fzf_bin='fzf'
+fzf_bindings='/usr/share/doc/fzf/examples/key-bindings.zsh'
+if command -v "${fzf_bin}" >/dev/null && [ -f "${fzf_bindings}" ] ; then
+    # shellcheck source=/usr/share/doc/fzf/examples/key-bindings.zsh
+    . "${fzf_bindings}"
+fi
+unset fzf_bin fzf_bindings
+
 
 # Perl CPAN                                                            {{{1
 # added by perl module CPAN but commented out by user
